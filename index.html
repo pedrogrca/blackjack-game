@@ -8,15 +8,20 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    
-    <div class="game">
-    <h1>Blackjack</h1>
-    <p id="message-el">Gostaria de jogar uma rodada?</p>
-    <p id="cards-el">Cartas:</p>
-    <p id="sum-el">Soma:</p>
 
-    <button onclick="startGame()">INICIAR JOGO</button>
-    <button onclick="newCard()">NOVA CARTA</button>
+<div class="game">
+    <h1>Blackjack</h1>
+    <div class="text">
+    <p id="message-el">Gostaria de jogar uma rodada?</p>
+    <p id="cards-el"></p>
+    <p id="sum-el"></p>
+
+    <button id="startGame" onclick="startGame()">INICIAR JOGO</button>
+    <button id="newCard" onclick="newCard()">NOVA CARTA</button>
+
+    <p id="newGameMessage"></p>
+    <button id="newGameButton" onclick="playAgain()"></button>
+</div>
 
 </div>
 

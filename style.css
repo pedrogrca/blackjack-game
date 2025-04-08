@@ -13,6 +13,8 @@ body {
 h1 {
     color: #daa520;
     font-style: italic;
+    font-size: 80px;
+    margin-bottom: 120px;
 }
 
 .game {
@@ -25,6 +27,7 @@ h1 {
     background-color: #015a01;
     border: solid;
     border-radius: 15px;
+
 
 }
 
@@ -49,4 +52,12 @@ h1 {
 p {
     color: white;
     font-weight: bold;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 150px;
 }
