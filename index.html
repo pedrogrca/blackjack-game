@@ -9,21 +9,37 @@
 </head>
 <body>
 
+    <audio id="playMusic" src="Balatro - Complete Original Soundtrack (Official).mp3"></audio>
+
+
 <div class="game">
-    <h1>Blackjack</h1>
+        <h1>BlackJack</h1>
+        
+    <div class="computer">
+        <p id="dealer">Banca</p>
+        <p id="dealerCards">Cartas: </p>
+    </div>
     <div class="text">
-    <p id="message-el">Gostaria de jogar uma rodada?</p>
-    <p id="cards-el"></p>
-    <p id="sum-el"></p>
+        <p id="message-el">Gostaria de jogar uma rodada?</p>
+        <p id="cards-el"></p>
+        <p id="sum-el"></p>
 
-    <button id="startGame" onclick="startGame()">INICIAR JOGO</button>
-    <button id="newCard" onclick="newCard()">NOVA CARTA</button>
+        <button id="startGame" onclick="startGame()">INICIAR JOGO</button>
+        <button id="newCard" onclick="newCard()">NOVA CARTA</button>
 
-    <p id="newGameMessage"></p>
-    <button id="newGameButton" onclick="playAgain()"></button>
+        <p id="newGameMessage"></p>
+        <button id="newGameButton" onclick="playAgain()"></button>
+    </div>
+
 </div>
 
-</div>
+    <div class="player">
+        <p>Pedro: R$100,00</p>
+        <p></p>
+
+    </div>
+
+
 
     <script src="index.js"></script>
 </body>
