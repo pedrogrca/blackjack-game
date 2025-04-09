@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: url(/images/table.jpg);
+    background-image: url(/archives/table.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -14,19 +14,17 @@ body {
 * {
     font-family: "Roboto", sans-serif;
 }
+
 h1 {
+    text-align: center;
     color: #daa520;
     font-style: italic;
     font-size: 70px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     font-family: "Anton", sans-serif;
 }
 
 .game {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 700px;
     width: 500px;
     background-color: #015a01;
@@ -50,6 +48,7 @@ h1 {
     font-style: italic;
     font-weight: bold;
     color: white;
+    font-size: 20px;
 }
 
 p {
