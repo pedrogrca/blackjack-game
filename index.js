@@ -71,21 +71,30 @@ function renderGame() {
     if (sum <= 20) {
     message = "Gostaria de puxar uma nova carta?";
     } else if (sum === 21) {
-    message = "Parabéns, você ganhou!";
+    message = "Parabéns, você conseguiu Blackjack!";
     hasBlackJack = true;
     newGameMessage.textContent = "Gostaria de jogar novamente?";
     newGameButton.style.display = "block";
     newGameButton.textContent = "JOGAR NOVAMENTE"
     newCardButton.style.display = "none";
     standButton.style.display = "none";
-    } else {
-    message = "Você Perdeu!";
+    } else if (sum > 21) {
+    message = "Você estourou, perdeu!";
     isAlive = false;
     newGameMessage.textContent = "Gostaria de jogar novamente?";
     newGameButton.style.display = "block";
     newGameButton.textContent = "JOGAR NOVAMENTE"
     newCardButton.style.display = "none";
     standButton.style.display = "none";
+    } else {
+    message = "Você ganhou, parabéns!";
+    isAlive = true;
+    newGameMessage.textContent = "Gostaria de jogar novamente?";
+    newGameButton.style.display = "block";
+    newGameButton.textContent = "JOGAR NOVAMENTE"
+    newCardButton.style.display = "none";
+    standButton.style.display = "none";
+
     }
 
 
@@ -125,7 +134,6 @@ function newCard() {
     sum += card;
     cards.push(card);
     renderGame();
-    dealerGame();
     }
 }
 
@@ -135,18 +143,20 @@ function newCard() {
 
 
 function stand() {
+    let dealerSum = cardsDealer.reduce((a, b) => a + b, 0);
     newCardButton.style.display = "none";
     standButton.style.display = "none";
-
     let secondDealerCard = getRandomCard();
     cardsDealer.push(secondDealerCard)
     dealerCards.textContent = "Cartas: " + cardsDealer + " ";
 
-    checkWinner()
+    newDealerCard();
+    checkWinner();
 }
 
 
 function dealerGame() {
+    
     let dealerSum = cardsDealer.reduce((a, b) => a + b, 0);
     let firstDealerCard = getRandomCard();
     cardsDealer.push(firstDealerCard)
@@ -155,10 +165,21 @@ function dealerGame() {
 
 }
 
+function newDealerCard() {
+    let dealerSum = cardsDealer.reduce((a, b) => a + b, 0);
+    if (isAlive === true && hasBlackJack === false){
+        let dealerCard = getRandomCard();
+        dealerSum += dealerCard;
+        cardsDealer.push(dealerCard);
+        renderGame();
+        }
+}
+
 function checkWinner() {
     let dealerSum = cardsDealer.reduce((a, b) => a + b, 0);
     console.log(`Soma Player: ${sum}`)
     console.log(`Soma Dealer: ${dealerSum}`)
+    dealerCardsSum.textContent = dealerSum;
     if (dealerSum === 21) {
         messageEl.textContent = "A banca conseguiu BlackJack, você Perdeu!"
         newGameMessage.textContent = "Gostaria de jogar novamente?";
